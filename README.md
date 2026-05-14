@@ -1,3 +1,3 @@
-# Synthia Server
+# Resonance Network
 
-Canonical backend destination.
+Hardcoded global surface.
