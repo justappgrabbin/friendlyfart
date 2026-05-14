@@ -1,0 +1,144 @@
+name: Unpack Artifact Bundles
+
+on:
+  push:
+    paths:
+      - 'artifact-bundles/**/*.zip'
+      - '.github/workflows/unpack-artifact-bundles.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  unpack:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Prepare canonical folders
+        run: |
+          mkdir -p services/synthia-server
+          mkdir -p apps/resonance-network
+          mkdir -p apps/resonance-os-web
+          mkdir -p apps/resonance-phone-shell
+          mkdir -p apps/morphnn-resonance-os
+          mkdir -p apps/metabolic-library
+          mkdir -p core/runtime/mrnn-os
+          mkdir -p core/runtime/remount
+          mkdir -p models/morph-generative
+          mkdir -p models/social-neural-resonance-gnn
+          mkdir -p labs/stellar-proximology
+          mkdir -p deployments/production
+          mkdir -p archive/prototypes
+          mkdir -p archive/raw-bundles
+          mkdir -p docs
+
+      - name: Unpack ZIP bundles into canonical destinations
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [ ! -d artifact-bundles ]; then
+            echo "No artifact-bundles directory found. Nothing to unpack."
+            exit 0
+          fi
+
+          shopt -s nullglob
+          found=0
+
+          for zip in artifact-bundles/*.zip; do
+            found=1
+            name="$(basename "$zip")"
+            lower="$(echo "$name" | tr '[:upper:]' '[:lower:]')"
+            work="/tmp/friendlyfart-unpack/${name%.zip}"
+            rm -rf "$work"
+            mkdir -p "$work"
+
+            echo "Unpacking $name"
+            unzip -o -q "$zip" -d "$work"
+
+            case "$lower" in
+              *synthia-trident-kernel*|*stellar-orchestrator*|*morph-render-backend*|*backend*|*server*)
+                dest="services/synthia-server"
+                ;;
+              *resonance-network*)
+                dest="apps/resonance-network"
+                ;;
+              *resonance-os-web*)
+                dest="apps/resonance-os-web"
+                ;;
+              *resonance-os-phone*|*phone*)
+                dest="apps/resonance-phone-shell"
+                ;;
+              *resonance-shell-remount*|*remount*)
+                dest="core/runtime/remount"
+                ;;
+              *mrnn-os*)
+                dest="core/runtime/mrnn-os"
+                ;;
+              *production*)
+                dest="deployments/production"
+                ;;
+              *netlify-drag-drop*|*prototype*)
+                dest="archive/prototypes/${name%.zip}"
+                ;;
+              *trident_patched*|*trident-patched*)
+                dest="archive/prototypes/trident-patched"
+                ;;
+              *)
+                dest="archive/raw-bundles/${name%.zip}"
+                ;;
+            esac
+
+            mkdir -p "$dest"
+            echo "Moving $name -> $dest"
+            cp -R "$work"/. "$dest"/
+          done
+
+          if [ "$found" -eq 0 ]; then
+            echo "No ZIP files found in artifact-bundles/."
+          fi
+
+      - name: Write unpack manifest
+        shell: bash
+        run: |
+          cat > docs/UNPACK-MANIFEST.md <<'EOF'
+          # Unpack Manifest
+
+          This repo uses `.github/workflows/unpack-artifact-bundles.yml` to unpack ZIP files dropped into `artifact-bundles/`.
+
+          ## Placement rules
+
+          - `synthia-trident-kernel*`, `stellar-orchestrator*`, `morph-render-backend*`, `backend*`, `server*` → `services/synthia-server/`
+          - `Resonance-network*` → `apps/resonance-network/`
+          - `resonance-os-web*` → `apps/resonance-os-web/`
+          - `resonance-os-phone*` → `apps/resonance-phone-shell/`
+          - `resonance-shell-remount*` → `core/runtime/remount/`
+          - `mrnn-os*` → `core/runtime/mrnn-os/`
+          - `*production*` → `deployments/production/`
+          - `morph-netlify-drag-drop*` and prototype bundles → `archive/prototypes/`
+          - unknown bundles → `archive/raw-bundles/`
+
+          ## Rule
+
+          Backend/server files belong in `services/synthia-server/`.
+          EOF
+
+      - name: Commit unpacked contents
+        shell: bash
+        run: |
+          git config user.name "friendlyfart-unpacker"
+          git config user.email "actions@github.com"
+          git add services apps core models labs deployments archive docs/UNPACK-MANIFEST.md
+
+          if git diff --cached --quiet; then
+            echo "No unpacked changes to commit."
+          else
+            git commit -m "Unpack artifact bundles into canonical folders"
+            git push
+          fi
