@@ -1,0 +1,6 @@
+
+export const EVENT_TYPES = [
+  'STATE_CHANGE',
+  'ADDRESS_REGISTERED',
+  'CLUSTER_FORMED'
+];
