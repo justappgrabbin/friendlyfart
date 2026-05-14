@@ -1,3 +1,3 @@
-# friendlyfart
+# Synthia Server
 
-Synthia canonical integration workspace.
+Canonical backend destination.
