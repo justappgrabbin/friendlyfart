@@ -10,6 +10,13 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: unpack-artifact-bundles
+  cancel-in-progress: false
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 jobs:
   unpack:
     runs-on: ubuntu-latest
@@ -19,6 +26,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          ref: main
 
       - name: Prepare canonical folders
         run: |
@@ -114,15 +122,15 @@ jobs:
 
           ## Placement rules
 
-          - `synthia-trident-kernel*`, `stellar-orchestrator*`, `morph-render-backend*`, `backend*`, `server*` → `services/synthia-server/`
-          - `Resonance-network*` → `apps/resonance-network/`
-          - `resonance-os-web*` → `apps/resonance-os-web/`
-          - `resonance-os-phone*` → `apps/resonance-phone-shell/`
-          - `resonance-shell-remount*` → `core/runtime/remount/`
-          - `mrnn-os*` → `core/runtime/mrnn-os/`
-          - `*production*` → `deployments/production/`
-          - `morph-netlify-drag-drop*` and prototype bundles → `archive/prototypes/`
-          - unknown bundles → `archive/raw-bundles/`
+          - `synthia-trident-kernel*`, `stellar-orchestrator*`, `morph-render-backend*`, `backend*`, `server*` -> `services/synthia-server/`
+          - `Resonance-network*` -> `apps/resonance-network/`
+          - `resonance-os-web*` -> `apps/resonance-os-web/`
+          - `resonance-os-phone*` -> `apps/resonance-phone-shell/`
+          - `resonance-shell-remount*` -> `core/runtime/remount/`
+          - `mrnn-os*` -> `core/runtime/mrnn-os/`
+          - `*production*` -> `deployments/production/`
+          - `morph-netlify-drag-drop*` and prototype bundles -> `archive/prototypes/`
+          - unknown bundles -> `archive/raw-bundles/`
 
           ## Rule
 
@@ -132,13 +140,16 @@ jobs:
       - name: Commit unpacked contents
         shell: bash
         run: |
+          set -euo pipefail
           git config user.name "friendlyfart-unpacker"
           git config user.email "actions@github.com"
           git add services apps core models labs deployments archive docs/UNPACK-MANIFEST.md
 
           if git diff --cached --quiet; then
             echo "No unpacked changes to commit."
-          else
-            git commit -m "Unpack artifact bundles into canonical folders"
-            git push
+            exit 0
           fi
+
+          git commit -m "Unpack artifact bundles into canonical folders"
+          git pull --rebase origin main
+          git push origin HEAD:main
