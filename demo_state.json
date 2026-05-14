@@ -1,0 +1,483 @@
+{
+  "nodes": [
+    {
+      "id": "node_0",
+      "being": 0.240119166220518,
+      "design": 0.12860291180991612,
+      "movement": 0.22691880304708534,
+      "evolution": 0.40165001386680943,
+      "space": 0.8155665896179822,
+      "line": 1,
+      "regime": "STABLE",
+      "binary_state": "yin",
+      "tension": 0.0,
+      "memory_gravity": 0.0,
+      "channel": "LOGIC_63_4",
+      "circuit": "UNDERSTANDING",
+      "graph_type": "DAG",
+      "attractor_weight": 0.0,
+      "recursion_depth": 0,
+      "fuxi_state": "000001",
+      "hexagram": "Receptive"
+    },
+    {
+      "id": "node_1",
+      "being": 0.8567973563840995,
+      "design": 0.2283669606542319,
+      "movement": 0.12872439288457405,
+      "evolution": 0.6555142615402499,
+      "space": 0.44036209051536257,
+      "line": 2,
+      "regime": "STABLE",
+      "binary_state": "yin",
+      "tension": 0.0,
+      "memory_gravity": 0.0,
+      "channel": "ACCEPTANCE_17_62",
+      "circuit": "UNDERSTANDING",
+      "graph_type": "BIPARTITE",
+      "attractor_weight": 0.0,
+      "recursion_depth": 0,
+      "fuxi_state": "010010",
+      "hexagram": "Decay"
+    },
+    {
+      "id": "node_2",
+      "being": 0.36121214537883395,
+      "design": 0.604050296170906,
+      "movement": 0.049142495867776526,
+      "evolution": 0.5109541218896506,
+      "space": 0.23959573790870314,
+      "line": 3,
+      "regime": "STABLE",
+      "binary_state": "yin",
+      "tension": 0.0,
+      "memory_gravity": 0.0,
+      "channel": "JUDGMENT_18_58",
+      "circuit": "UNDERSTANDING",
+      "graph_type": "ATTRACTOR",
+      "attractor_weight": 0.0,
+      "recursion_depth": 0,
+      "fuxi_state": "001010",
+      "hexagram": "Peace"
+    },
+    {
+      "id": "node_3",
+      "being": 0.11444937073557959,
+      "design": 0.45260847670378734,
+      "movement": 0.35524553311209783,
+      "evolution": 0.7920840094725772,
+      "space": 0.4144523664896361,
+      "line": 4,
+      "regime": "STABLE",
+      "binary_state": "yin",
+      "tension": 0.0,
+      "memory_gravity": 0.0,
+      "channel": "WAVELENGTH_16_48",
+      "circuit": "UNDERSTANDING",
+      "graph_type": "SPARSE",
+      "attractor_weight": 0.0,
+      "recursion_depth": 0,
+      "fuxi_state": "100010",
+      "hexagram": "Progress"
+    },
+    {
+      "id": "node_4",
+      "being": 0.2490307453070072,
+      "design": 0.8200663286052267,
+      "movement": 0.6343363359721015,
+      "evolution": 0.598231651010312,
+      "space": 0.3283912126578876,
+      "line": 5,
+      "regime": "STABLE",
+      "binary_state": "yin",
+      "tension": 0.0,
+      "memory_gravity": 0.0,
+      "channel": "CONCENTRATION_9_52",
+      "circuit": "UNDERSTANDING",
+      "graph_type": "FIXED_RANDOM",
+      "attractor_weight": 0.0,
+      "recursion_depth": 0,
+      "fuxi_state": "101110",
+      "hexagram": "Exhaustion"
+    },
+    {
+      "id": "node_5",
+      "being": 0.7485768670205979,
+      "design": 0.956944057431398,
+      "movement": 0.22507706386679727,
+      "evolution": 0.03487895723437617,
+      "space": 0.8956670246488505,
+      "line": 6,
+      "regime": "STABLE",
+      "binary_state": "yin",
+      "tension": 0.0,
+      "memory_gravity": 0.0,
+      "channel": "RHYTHM_5_15",
+      "circuit": "UNDERSTANDING",
+      "graph_type": "SELF_ORGANIZING",
+      "attractor_weight": 0.0,
+      "recursion_depth": 0,
+      "fuxi_state": "111001",
+      "hexagram": "Joy"
+    },
+    {
+      "id": "node_6",
+      "being": 0.25575102670672833,
+      "design": 0.9604090989226414,
+      "movement": 0.008798356452804135,
+      "evolution": 0.40059931000312987,
+      "space": 0.8905131616531742,
+      "line": 1,
+      "regime": "STABLE",
+      "binary_state": "yin",
+      "tension": 0.0,
+      "memory_gravity": 0.0,
+      "channel": "ALPHA_7_31",
+      "circuit": "UNDERSTANDING",
+      "graph_type": "HIERARCHICAL",
+      "attractor_weight": 0.0,
+      "recursion_depth": 0,
+      "fuxi_state": "001001",
+      "hexagram": "Treading"
+    },
+    {
+      "id": "node_7",
+      "being": 1.0,
+      "design": 1.0,
+      "movement": 1.0,
+      "evolution": 1.0,
+      "space": 1.0,
+      "line": 2,
+      "regime": "STABLE",
+      "binary_state": "yin",
+      "tension": 0.4661819201671311,
+      "memory_gravity": 0.469943530232076,
+      "channel": "MATURATION_53_42",
+      "circuit": "SENSING",
+      "graph_type": "HIERARCHICAL",
+      "attractor_weight": 0.0,
+      "recursion_depth": 0,
+      "fuxi_state": "011111",
+      "hexagram": "Duration"
+    },
+    {
+      "id": "node_8",
+      "being": 0.04467978004302553,
+      "design": 0.21821193408473882,
+      "movement": 0.898397793674923,
+      "evolution": 0.21263038878914187,
+      "space": 0.023533510424893822,
+      "line": 3,
+      "regime": "STABLE",
+      "binary_state": "yin",
+      "tension": 0.0,
+      "memory_gravity": 0.0,
+      "channel": "RECOGNITION_41_30",
+      "circuit": "SENSING",
+      "graph_type": "ATTRACTOR",
+      "attractor_weight": 0.0,
+      "recursion_depth": 0,
+      "fuxi_state": "000100",
+      "hexagram": "Waiting"
+    },
+    {
+      "id": "node_9",
+      "being": 1.0,
+      "design": 1.0,
+      "movement": 1.0,
+      "evolution": 1.0,
+      "space": 1.0,
+      "line": 4,
+      "regime": "STABLE",
+      "binary_state": "yin",
+      "tension": 0.15153782832660811,
+      "memory_gravity": 0.670721824952961,
+      "channel": "TRANSITORINESS_36_35",
+      "circuit": "SENSING",
+      "graph_type": "DAG",
+      "attractor_weight": 0.0,
+      "recursion_depth": 0,
+      "fuxi_state": "111111",
+      "hexagram": "Before Completion"
+    },
+    {
+      "id": "node_10",
+      "being": 1.0,
+      "design": 1.0,
+      "movement": 1.0,
+      "evolution": 1.0,
+      "space": 1.0,
+      "line": 5,
+      "regime": "STABLE",
+      "binary_state": "yin",
+      "tension": 0.24911719920562803,
+      "memory_gravity": 0.6508569454879193,
+      "channel": "ABSTRACTION_64_47",
+      "circuit": "SENSING",
+      "graph_type": "SPARSE",
+      "attractor_weight": 0.0,
+      "recursion_depth": 0,
+      "fuxi_state": "111111",
+      "hexagram": "Before Completion"
+    },
+    {
+      "id": "node_11",
+      "being": 1.0,
+      "design": 1.0,
+      "movement": 1.0,
+      "evolution": 1.0,
+      "space": 1.0,
+      "line": 6,
+      "regime": "STABLE",
+      "binary_state": "yin",
+      "tension": 0.28348322679770077,
+      "memory_gravity": 0.7950073737102298,
+      "channel": "CURIOSITY_11_56",
+      "circuit": "SENSING",
+      "graph_type": "SELF_ORGANIZING",
+      "attractor_weight": 0.0,
+      "recursion_depth": 0,
+      "fuxi_state": "111111",
+      "hexagram": "Before Completion"
+    }
+  ],
+  "edges": [
+    {
+      "source": "node_0",
+      "target": "node_3",
+      "type": "connection",
+      "adapter": null
+    },
+    {
+      "source": "node_0",
+      "target": "node_7",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_0",
+      "target": "node_9",
+      "type": "crossing",
+      "adapter": null
+    },
+    {
+      "source": "node_0",
+      "target": "node_10",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_0",
+      "target": "node_11",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_1",
+      "target": "node_7",
+      "type": "crossing:layer_bridge",
+      "adapter": "layer_bridge"
+    },
+    {
+      "source": "node_1",
+      "target": "node_9",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_1",
+      "target": "node_10",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_1",
+      "target": "node_11",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_2",
+      "target": "node_3",
+      "type": "connection",
+      "adapter": null
+    },
+    {
+      "source": "node_2",
+      "target": "node_5",
+      "type": "connection",
+      "adapter": null
+    },
+    {
+      "source": "node_2",
+      "target": "node_7",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_2",
+      "target": "node_9",
+      "type": "crossing:state_projection",
+      "adapter": "state_projection"
+    },
+    {
+      "source": "node_2",
+      "target": "node_10",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_2",
+      "target": "node_11",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_3",
+      "target": "node_5",
+      "type": "connection",
+      "adapter": null
+    },
+    {
+      "source": "node_3",
+      "target": "node_6",
+      "type": "connection",
+      "adapter": null
+    },
+    {
+      "source": "node_3",
+      "target": "node_7",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_3",
+      "target": "node_9",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_3",
+      "target": "node_10",
+      "type": "crossing",
+      "adapter": null
+    },
+    {
+      "source": "node_3",
+      "target": "node_11",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_4",
+      "target": "node_7",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_4",
+      "target": "node_8",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_4",
+      "target": "node_9",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_4",
+      "target": "node_10",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_4",
+      "target": "node_11",
+      "type": "crossing:plasticity_gate",
+      "adapter": "plasticity_gate"
+    },
+    {
+      "source": "node_5",
+      "target": "node_6",
+      "type": "connection",
+      "adapter": null
+    },
+    {
+      "source": "node_5",
+      "target": "node_7",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_5",
+      "target": "node_9",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_5",
+      "target": "node_10",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_5",
+      "target": "node_11",
+      "type": "crossing",
+      "adapter": null
+    },
+    {
+      "source": "node_6",
+      "target": "node_7",
+      "type": "crossing",
+      "adapter": null
+    },
+    {
+      "source": "node_6",
+      "target": "node_9",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_6",
+      "target": "node_10",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_6",
+      "target": "node_11",
+      "type": "crossing:universal_normalizer",
+      "adapter": "universal_normalizer"
+    },
+    {
+      "source": "node_7",
+      "target": "node_9",
+      "type": "connection",
+      "adapter": null
+    },
+    {
+      "source": "node_7",
+      "target": "node_10",
+      "type": "connection",
+      "adapter": null
+    },
+    {
+      "source": "node_8",
+      "target": "node_10",
+      "type": "connection",
+      "adapter": null
+    },
+    {
+      "source": "node_9",
+      "target": "node_11",
+      "type": "connection",
+      "adapter": null
+    }
+  ],
+  "tick": 20,
+  "field_coherence": 0.8961526020531602,
+  "attractor_basins": {}
+}
