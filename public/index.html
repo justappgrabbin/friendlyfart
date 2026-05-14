@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Synthia Visual Availability Hub</title>
+  <style>
+    :root { color-scheme: dark; --bg:#05070f; --card:#101624; --line:#24304a; --text:#e5f0ff; --muted:#91a4c7; --cyan:#47e6ff; --green:#3cff9d; --violet:#b980ff; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif; background: radial-gradient(circle at top left, rgba(71,230,255,.16), transparent 34%), radial-gradient(circle at bottom right, rgba(185,128,255,.14), transparent 38%), var(--bg); color:var(--text); }
+    main { width:min(1160px, calc(100% - 32px)); margin:0 auto; padding:44px 0 80px; }
+    header { padding:28px 0 30px; border-bottom:1px solid var(--line); }
+    h1 { margin:0; font-size:clamp(2rem, 5vw, 4.2rem); letter-spacing:-.06em; }
+    .sub { color:var(--muted); font-size:1.05rem; max-width:760px; line-height:1.65; margin-top:14px; }
+    .status { display:inline-flex; gap:10px; align-items:center; margin-top:22px; padding:9px 14px; border:1px solid rgba(60,255,157,.35); border-radius:999px; background:rgba(60,255,157,.08); color:var(--green); font-weight:700; }
+    .dot { width:9px; height:9px; border-radius:50%; background:var(--green); box-shadow:0 0 18px var(--green); }
+    section { margin-top:34px; }
+    h2 { font-size:1rem; color:var(--cyan); text-transform:uppercase; letter-spacing:.16em; margin:0 0 14px; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); gap:14px; }
+    .card { border:1px solid var(--line); background:rgba(16,22,36,.84); border-radius:18px; padding:18px; min-height:150px; box-shadow:0 18px 44px rgba(0,0,0,.22); }
+    .card h3 { margin:0 0 8px; font-size:1.05rem; }
+    .card p { color:var(--muted); line-height:1.5; margin:0 0 14px; }
+    .tag { display:inline-flex; margin-right:6px; margin-bottom:6px; padding:5px 8px; border:1px solid rgba(71,230,255,.22); border-radius:999px; color:var(--cyan); font-size:.76rem; }
+    a { color:inherit; text-decoration:none; }
+    .link { display:inline-flex; color:#061018; background:linear-gradient(135deg,var(--cyan),var(--green)); padding:9px 11px; border-radius:10px; font-weight:800; }
+    .muted { color:var(--muted); }
+    code { color:var(--green); }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Synthia is available.</h1>
+      <p class="sub">This hub makes the current repo pieces visible and reachable. It does not delete, flatten, or silently replace uploaded artifacts. Backend pieces are surfaced as present system modules; UI pieces are surfaced as app/shell destinations.</p>
+      <div class="status"><span class="dot"></span> Visual availability layer mounted</div>
+    </header>
+
+    <section>
+      <h2>Core Surfaces</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Resonance Network</h3>
+          <p>Hardcoded common surface. Everyone can visit; depth and interaction can vary by state.</p>
+          <span class="tag">core surface</span><span class="tag">global</span><span class="tag">network</span>
+          <p><a class="link" href="./surfaces/resonance-network.html">Open surface</a></p>
+        </article>
+        <article class="card">
+          <h3>Synthia Dashboard</h3>
+          <p>Main visual shell for state, apps, memory, clusters, and entry points.</p>
+          <span class="tag">dashboard</span><span class="tag">home</span>
+          <p><a class="link" href="./surfaces/synthia-dashboard.html">Open surface</a></p>
+        </article>
+        <article class="card">
+          <h3>Resonance Phone Shell</h3>
+          <p>Mobile OS shell destination for phone-first Synthia access.</p>
+          <span class="tag">mobile</span><span class="tag">shell</span>
+          <p><a class="link" href="./surfaces/resonance-phone-shell.html">Open surface</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Server Modules</h2>
+      <div class="grid">
+        <article class="card"><h3>Synthia Server</h3><p>Backend destination for addressing, gateway, registry, orchestration, memory, and resonance computation.</p><span class="tag">services/synthia-server</span></article>
+        <article class="card"><h3>Address Registry</h3><p>Canonical place for entity field signatures and participation addresses.</p><span class="tag">core needed</span></article>
+        <article class="card"><h3>Unified Resonance Engine</h3><p>Gate/codon/field computation and resonance rules.</p><span class="tag">server module</span></article>
+        <article class="card"><h3>Social Neural GNN</h3><p>Collective routing, bridge-node detection, and network coherence logic.</p><span class="tag">server module</span></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Runtime + Lab</h2>
+      <div class="grid">
+        <article class="card"><h3>MRNN Runtime</h3><p>Field loops and resonance substrate.</p><span class="tag">core/runtime/mrnn-os</span></article>
+        <article class="card"><h3>Stellar Proximology</h3><p>Research/lab guide, trinity chart concepts, glyph systems, and validation layer.</p><span class="tag">labs/stellar-proximology</span></article>
+        <article class="card"><h3>Glyph Engine</h3><p>Shared symbolic rendering package for gates, fields, signatures, and future agent sigils.</p><span class="tag">packages/glyph-engine</span></article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Repo Map</h2>
+      <div class="card">
+        <p><code>services/synthia-server</code> for backend. <code>apps</code> for visible surfaces. <code>packages</code> for shared code. <code>core/runtime</code> for substrate. <code>labs</code> for Stellar Proximology. <code>archive</code> for older prototypes.</p>
+        <p class="muted">Next: unpack uploaded bundles into these destinations without removing originals.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
